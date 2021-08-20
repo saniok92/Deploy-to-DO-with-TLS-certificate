@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  tls:
+  - hosts:
+    - web.koval92.xyz
+    secretName: echo-tls
+  rules:
+  - host: web.koval92.xyz
+    http:
+      paths:
+      - backend:
+          serviceName: sample
+          servicePort: 80

@@ -8,12 +8,12 @@ metadata:
 spec:
   tls:
   - hosts:
-    - web.koval92.xyz
-    secretName: echo-tls
+    - koval92.xyz
+    secretName: test-tls
   rules:
-  - host: web.koval92.xyz
+  - host: koval92.xyz
     http:
       paths:
       - backend:
-          serviceName: sample
+          serviceName: service
           servicePort: 80

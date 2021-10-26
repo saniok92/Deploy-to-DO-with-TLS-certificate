@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('get nodes') {
       steps {
-        sh'kubectl get nodes'
+        sh'echo $token | kubectl get nodes'
       }
     }
     stage('apply ingress') {

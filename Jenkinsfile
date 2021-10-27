@@ -57,11 +57,10 @@ pipeline {
          --set webhook.timeoutSeconds=4   # Example: changing the wehbook timeout using a Helm parameter'''
       }
     }
-  stage('apply issures') {
-    steps {
-      sh'kubectl apply -f issures.yaml'
-      }
-    }
-  
+   stage('apply issures') {
+     steps {
+       sh'kubectl apply -f issures.yaml'
+     }
+   }
   }
 }
